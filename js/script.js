@@ -14,6 +14,7 @@ new Vue({
     bkgColor: "",
   },
   methods: {
+    // funzione per generare colori random esadecimali
     getRandomColor() {
       const acceptableChars = "0123456789ABCDEF";
       let color = "#";
@@ -23,11 +24,13 @@ new Vue({
       return color; // #xxxxxx
     },
 
+    //Funzione per prendere numeri random
     getRandomInteger(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
   },
   created() {
+    // Ciclo per creare le 10 mail e pusharle nell'array delle mails
     for (let i = 0; i < 10; i++) {
       axios
         .get("https://flynn.boolean.careers/exercises/api/random/mail")
@@ -36,9 +39,12 @@ new Vue({
           this.arrMails.push(result.data.response);
           // console.log(this.arrMails);
         });
+
+      // pushare nell'array i colori random generati grazie allo stesso ciclo usato per creare le mails
       this.randomColors.push(this.getRandomColor());
       // console.log(this.randomColors);
     }
+    // Applicare il colore random al background
     this.bkgColor = this.getRandomColor();
   },
 });

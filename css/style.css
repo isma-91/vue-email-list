@@ -21,6 +21,7 @@ ul {
 
 li {
   padding: 1rem 1rem;
+  text-shadow: 0 5px 10px black;
 }
 
 li:hover {

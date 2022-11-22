@@ -35,8 +35,11 @@
 </head>
 
 <body>
+  <!-- Si prende il background color dalla variabile impostata in JS con il generatore di colori random -->
   <div id="root" class="mail-list" :style="{backgroundColor: bkgColor}" v-cloak>
     <ul>
+      <!-- iterare nell'array per generare le 10 mail, e dargli lo style dinamico per applicare ad ogni mail il colore
+      random generato nello stesso ciclo che abbiamo usato per generare le 10 mail random -->
       <li v-for="(item, index) in arrMails" :key="item" v-show="arrMails.length == 10"
         :style="{color: randomColors[index]}">
         <i class="fa-solid fa-envelope"></i> {{ item }}
