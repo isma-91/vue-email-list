@@ -36,8 +36,6 @@ li i {
   max-width: 900px;
   margin: auto;
   text-align: center;
-  background-color: goldenrod;
-  color: white;
   border-radius: 30px;
-  box-shadow: 0 0 20px 20px gold;
+  box-shadow: 0 0 20px 20px lightgray;
 }
